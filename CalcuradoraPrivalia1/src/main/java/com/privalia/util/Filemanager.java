@@ -6,31 +6,36 @@ import java.io.IOException;
 
 import com.privalia.common.Alumno;
 
+
 public class Filemanager {
 	
-	public static void CreateFile (String arg[]) {
+	public static File CreateFile () {
+		
+		File file=null;
+		
 		try {
 		
-			File file = new File("Alumno.txt");
+			file = new File("Alumno.txt");
 	
 			if(file.exists()) {
 			
-				WriteFile(file);
-			
+							
 			}else {
 			
 				file.createNewFile();
-				WriteFile(file);
+				
 			}
 	
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
+		
+		return file;
 	}
-	private static void WriteFile(File file) throws IOException{
+	public static void WriteFile(File file, String alumno) throws IOException{
 		
 		FileWriter writer = new FileWriter(file);
-		writer.write("");
+		writer.write(alumno);
 		writer.flush();
 		writer.close();
 		

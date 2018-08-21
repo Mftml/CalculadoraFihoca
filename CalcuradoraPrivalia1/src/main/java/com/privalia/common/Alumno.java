@@ -47,6 +47,21 @@ public class Alumno {
 			return false;
 		return true;
 	}
+	
+	@Override
+	
+	public String toString() {
+		
+		StringBuilder builder = new StringBuilder();
+		builder.append(idAlumno);
+		builder.append(",");
+		builder.append(nombre);
+		builder.append(",");
+		builder.append(apellido);
+		builder.append(",");
+		builder.append(dni);
+		return builder.toString();
+	}
 	public String getIdAlumno() {
 		return idAlumno;
 	}
